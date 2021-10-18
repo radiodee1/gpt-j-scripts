@@ -1,11 +1,14 @@
+#!/usr/bin/env python3.6
+
 from transformers import GPTJForCausalLM, AutoTokenizer
 import torch
 
 model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B", revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True)
+#model = model.to('cuda')
 
 #from transformers import AutoTokenizer
 #model = AutoModelForCausalLM.from_pretrained("EleutherAI/gpt-j-6B")
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B", low_cpu_mem_usage=True)
 
 prompt = "In a shocking finding, scientists discovered a herd of unicorns living in a remote, " \
          "previously unexplored valley, in the Andes Mountains. Even more surprising to the " \
