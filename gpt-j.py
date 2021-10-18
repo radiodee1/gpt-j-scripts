@@ -8,7 +8,7 @@ model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B", revision="float16
 
 #from transformers import AutoTokenizer
 #model = AutoModelForCausalLM.from_pretrained("EleutherAI/gpt-j-6B")
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B", low_cpu_mem_usage=True)
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
 
 prompt = "In a shocking finding, scientists discovered a herd of unicorns living in a remote, " \
          "previously unexplored valley, in the Andes Mountains. Even more surprising to the " \
